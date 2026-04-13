@@ -14,6 +14,73 @@
     --text-muted: #633813be;
     --trans-back: rgba(255, 255, 255, 0.15);
 }
+
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--text-main), #fff);
+    z-index: 9999;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 0 6px var(--text-main);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header-container i {
+    font-size: 2rem; 
+    color: var(--text-main); 
+    transition: all 0.3s ease; 
+}
+
+.github a:hover i {
+    color: #FE4C25;
+    text-shadow: 0 0 15px #FE4C25;
+    transform: scale(1.1); 
+}
+
+.linkedin a:hover i {
+    color: #0077b5;
+    text-shadow: 0 0 15px rgba(0, 119, 181, 0.7);
+    transform: scale(1.1);
+}
+
+.user-name {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+.user-name {
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .header-container {
+    flex-direction: column;
+    gap: 10px;
+    }
+}
+
 body {
     margin: 0;
     display: flex;
@@ -179,6 +246,7 @@ main {
     width: 100%;
     padding: 60px 20px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .swiper {
@@ -373,9 +441,6 @@ input, textarea {
     filter: brightness(1.2);
     transform: translateY(-2px);
 }
-
-
-
 
 footer {
     margin-top: auto;
